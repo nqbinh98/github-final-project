@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Password
+{% endblock %}
+
+{% block main %}
+    
+    <div class="clear form-nav nav web-top">
+        <div class="nav-item-left">
+            <a href="/register" class="nav-item">REGISTER</a>
+            <a href="/login" class="nav-item">Login</a>
+        </div>
+    </div>
+
+    <form class="form-web" action="/changepassword" method="post">
+        <div class="">
+            <label class="form-label" for="oldpassword">pasword</label>
+            <input  autocomplete="off" autofocus class="form-input" name="password" placeholder="Password" type="password">
+            <span class="alert-msg"></span>
+        </div>
+        <div class="">
+            <label class="form-label" for="newpassword">newpassword</label>
+            <input  class="form-input " name="newpassword" placeholder="New Password" type="password">
+            <span  class="alert-msg"></span>
+        </div>
+        <div class="">
+            <label class="form-label" for="confirmation">Confirm Password</label>
+            <input  class="form-input " name="confirmation" placeholder="Confirm Password" type="password">
+            <span  class="alert-msg"></span>
+        </div>
+        <button class="form-btn" type="submit">Submit</button>
+    </form>
+    <footer class="form-footer web-black web-xxlarge web-center">
+        <p class="">
+            Powered by 
+            <a class="w3" href="">w3.css</a>
+        </p>
+    </footer>
+{% endblock %}

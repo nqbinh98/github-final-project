@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    
+    <div class="clear form-nav nav web-top">
+        <div class="">
+            <span style="text-align: center;" class="nav-item">History orders</span>
+            
+        </div>
+    </div>
+
+    <form action="/" method="get">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-3 text-start">Id_order</th>
+                    <th class="col-3 text-end">Food</th>
+                    <th class="col-3 text-end">Pay</th>
+                </tr>
+            </thead>
+           <tbody>
+                    {% for row in trans %}
+                        <tr>
+                            <td class="col-3 text-start">{{ row['id_order'] }}</td>
+                            <td class="col-3 text-end">{{ row['name'] }}</td>
+                            <td class="col-3 text-end">{{ row['pay'] }}</td>
+                        </tr>
+                    {% endfor %}
+
+            </tbody>
+        </table>
+    </form>
+    <footer class="form-footer web-black web-xxlarge web-center">
+        <p class="web-margin-36">
+            Powered by 
+            <a class="w3" href="">w3.css</a>
+        </p>
+    </footer>
+{% endblock %}

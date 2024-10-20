@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <!-- https://memegen.link/ -->
+    <!-- https://knowyourmeme.com/memes/grumpy-cat -->
+    <!-- <div class="clear form-nav nav web-top">
+        <div class="nav-item-left">
+            <a href="/register" class="nav-item">REGISTER</a>
+            <a href="/login" class="nav-item">Login</a>
+        </div>
+    </div> -->
+    <div class="alert-error">
+        <img alt="{{ top }}" class="img-error" src="https://api.memegen.link/images/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?background=https://i.imgur.com/CsCgN7Ll.png&width=400" title="{{ top }}">
+
+    </div>
+{% endblock %}

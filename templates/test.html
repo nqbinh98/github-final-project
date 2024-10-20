@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Project: {% block title %}{% endblock %}</title>
+</head>
+<body>
+   
+    
+
+    <!-- FOR REGISTER OR LOGIN -->
+    <main class="web-display-container">
+        {% block main %}{% endblock %}
+        <!-- NAV BAR -->
+        
+        <div class="nav web-top">
+            <a href="#" class="nav-item">HOME</a>
+            <a href="#menu" class="nav-item">MENU</a>
+            <a href="#about" class="nav-item">ABOUT</a>
+            <a href="#contact" class="nav-item">CONTACT</a>
+            <div class="nav-item-left">
+    
+                <a href="/register" class="nav-item">REGISTER</a>
+                <a href="/login" class="nav-item">Login</a>
+            </div>
+        </div>
+        
+        <!-- HEADER -->
+        <header class="web-grayscale-50 web-display-container">
+            <div class="banner-slogan web-center web-middle">
+                <span>THIN <br> CRUST PIZZA</span>
+                <p class="web-flex-center">
+                    <a class="web-btn banner-slogan-sub" href="#menu">LET ME SEE THE MENU</a>
+                </p>
+            </div>
+            <div class="banner-slogan-bottom">
+                <span class="web-tag">OPEN FROM 10AM TO 12PM</span>
+            </div>
+        </header>
+        
+        <!-- MENU -->
+        <div id="menu" class="menu web-black web-container web-padding-64">
+            <div class="menu-container web-content">
+                <h1 class="web-header">THE MENU</h1>
+                <div class="menu-section ">
+                    <div class="menu-section-header web-border clear">
+                        <div onclick="openMenu(event,'pizza')" class="pizza menu-section-item web-red">
+                            <a href="#" onclick="handleLinkClick(event)" class="">PIZZA</a>
+                        </div>
+                        <div onclick="openMenu(event,'salads')" class="salads menu-section-item">
+                            <a href="#" onclick="handleLinkClick(event)" class="">SALADS</a>
+                        </div>
+                        <div onclick="openMenu(event,'starter')" class="starter menu-section-item">
+                            <a href="#" onclick="handleLinkClick(event)" class="">STARTER</a>
+                        </div>
+                    </div>
+                    <div id="pizza" class=" menu-section-content web-white">
+                        <div class="food-item">
+                            <h1>
+                                <b>MARGHERITA</b>
+                                <span class="price-tag">$12.50</span>
+                            </h1>
+                            <p>FRESH TOMATOES, FRESH MOZZARELLA, FRESH BASIL</p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>FORMAGGIO</b>
+                                <span class="price-tag">$15.50</span>
+                            </h1>
+                            <p>FOUR CHEESE (MOZZARELLA, PARMESAN, PECORINO, JARLSBERG)</p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>CHICKEN</b>
+                                <span class="price-tag">$17.00</span>
+                            </h1>
+                            <p>FRESH TOMATOES, MOZZARELLA, CHICKEN, ONIONS</p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>Pineapple'o'clock</b>
+                                <span class="price-tag">$16.50</span>
+                            </h1>
+                            <p>Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>Meat Town</b>
+                                <span class="red-tag">HOT!</span>
+                                <span class="price-tag">$20.00</span>
+                            </h1>
+                            <p>Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken</p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>Parma</b>
+                                <span class="grey-tag">NEW</span>
+                                <span class="price-tag">$20.00</span>
+                            </h1>
+                            <p>Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
+                        </div>
+                    </div>
+                    <div id="salads" class="menu-section-content web-white">
+                        <div class="food-item">
+                            <h1>
+                                <b>Lasagna</b>
+                                <span class="grey-tag">NEW</span>
+                                <span class="price-tag">$13.50</span>
+                            </h1>
+                            <p>Special sauce, mozzarella, parmesan, ground beef</p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>Ravioli</b>
+                                <span class="price-tag">$14.50</span>
+                            </h1>
+                            <p>Ravioli filled with cheese</p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>Spaghetti Classica</b>
+                                <span class="price-tag">$11.00</span>
+                            </h1>
+                            <p>Fresh tomatoes, onions, ground beef</p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>Seafood pasta</b>
+                                <span class="price-tag">$25.50</span>
+                            </h1>
+                            <p>Salmon, shrimp, lobster, garlic</p>
+                        </div>
+                        
+                    </div>
+                    <div id="starter" class=" menu-section-content web-white">
+                        <div class="food-item">
+                            <h1>
+                                <b>Today's Soup</b>
+                                <span class="grey-tag">Seasonal</span>
+                                <span class="price-tag">$5.50</span>
+                            </h1>
+                            <p>Ask the waiter</p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>Bruschetta</b>
+                                <span class="price-tag">$8.50</span>
+                            </h1>
+                            <p>Bread with pesto, tomatoes, onion, garlic</p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>Garlic bread</b>
+                                <span class="price-tag">$9.50</span>
+                            </h1>
+                            <p>Grilled ciabatta, garlic butter, onions
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="food-item">
+                            <h1>
+                                <b>Tomozzarella</b>
+                                <span class="price-tag">$10.50</span>
+                            </h1>
+                            <p>Tomatoes and mozzarella</p>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Order -->
+                <h1 class="web-header">Order here</h1>
+                <form class="form-web" action="/" method="post">
+                    <div class="">
+                        <label class="form-label" for="category">Category</label>
+                        <!-- <input  class="form-input" name="category" placeholder="Category" type="text" autocomplete="off" autofocus > -->
+                        <select onchange="showFood(event)" class="form-input" name="category" id="">
+                            <option value="Pizza">Pizza</option>
+                            <option value="Salads">Salads</option>
+                            <option value="Starter">Starter</option>
+                        </select>
+                    </div>
+                    <div class="">
+                        <label class="form-label" for="food">Food</label>
+                        <select  id="food-select" class="form-input " name="food" placeholder="Food" type="text">
+                            <option value="Margherita">Margherita</option>                        
+                            <option value="Formaggio">Formaggio</option>
+                            <option value="Chicken">Chicken</option>
+                            <option value="Meat Town">Meat Town</option>
+                            <option value="Parma">Parma</option>
+                        </select>
+                        </div>
+                    <div class="">
+                        <label class="form-label" for="amount">Amount</label>
+                        <input  class="form-input " name="amount" placeholder="Amount" min="0" max="10" type="number">
+                    </div>
+                    <button class="form-btn" type="submit">Submit</button>
+                </form>
+
+            </div>
+        
+        </div>
+        <div class="web-container">
+
+            <form action="/" method="get">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-start">Id</th>
+                            <th class="text-end">Food</th>
+                            <th class="text-end">Pay</th>
+        
+                        </tr>
+                    </thead>
+                   <tbody>
+                                <tr>
+                                    <td class="text-start">AAA</td>
+                                    <td class="text-end">AAA</td>
+                                    <td class="text-end">AAA</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start">AAA</td>
+                                    <td class="text-end">AAA</td>
+                                    <td class="text-end">AAA</td>
+                                </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    
+        <!-- ABOUT -->
+        <div id="about" class="about web-grayscale-75 web-red web-container web-padding-64">
+            <div class="about-container web-content">
+                <h1 class="web-header">ABOUT</h1>
+                <p>The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>
+                    <strong>THE CHEF?</strong>
+                    Mr. Italiano himself
+                    <img class="img-float-right" src="../img/chef.jpg" alt="">
+                </p>
+                <p>We are proud of our interiors.</p>
+                <img class="margin-vertical-16" src="../img/onepage_restaurant.jpg" alt="">
+                <h1><b>Opening hours</b></h1>
+                <div class="web-row clear">
+                    <div class="web-col col-2">
+                        <p>Mon & Tue closed</p>
+                        <p>Wednesday 10:00 - 24:00</p>
+                        <p>Thursday 10:00 - 24:00</p>
+                    </div>
+                    <div class="web-col col-2">
+                        <p>Fridau 10:00 - 12:00</p>
+                        <p>Wednesday 10:00 - 23:00</p>
+                        <p>Thursday closed</p>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        
+        <img class="web-grayscale-75" src="../img/map.jpg" alt="">
+        
+        <div id="contact" class="contact web-grayscale-50 web-blue-gray web-container web-padding-64">
+            <div class="web-content">
+                <h1 class="web-header">CONTACT</h1>
+                <p>Find us at some address at some place or call us at 05050515-122330</p>
+                <p>
+                    <span class="web-tag">FYI!</span>
+                    We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.
+                </p>
+                <p class="web-xxlarge web-margin-36">
+                    <strong>Reserve</strong>
+                    a table, ask for today's special or just send us a message:
+                </p>
+                <form action="/">
+                    <p>
+                        <input type="text" placeholder="Name" required name="Name" class="web-input">
+                    </p>
+                    <p>
+                        <input type="number" placeholder="How many people" required name="People" class="web-input">
+                    </p>
+                    <p>
+                        <input type="datetime-local" id="datetime" placeholder="Date and time" required name="date" class="web-input">
+                    </p>
+                    <p>
+                        <input type="text" placeholder="Message \ Special requirements" required name="Message" class="web-input">
+                    </p>
+                    <p>
+                        <button class="web-button" type="submit">SEND MESSAGE</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        
+        
+        <footer class="web-padding-48 web-black web-xxlarge web-center">
+            <p class="web-margin-36">
+                Powered by 
+                <a class="w3" href="">w3.css</a>
+            </p>
+        </footer>
+    </main>
+
+
+     <script src="../static/index.js"></script>
+</body>
+</html>
