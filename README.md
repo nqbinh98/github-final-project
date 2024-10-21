@@ -1,12 +1,29 @@
 # YOUR PROJECT TITLE
-#### Video Demo:  <URL https://youtu.be/g1v_U0chgKY>
+#### Video Demo: [Watch here](https://youtu.be/g1v_U0chgKY)
+<!-- <URL https://youtu.be/g1v_U0chgKY> -->
 #### Description:
 
-This is my final project CS50x, this is a website for order food, people can register and order food, every order can be check. They can choose category, food, amount of food to order, they can change password or log out to login a different account.
-I use html, css, javascript, python, sqlite3, flask in this project.
-In app.py i use flask to create funcion of website like login, logout, register, chanpassword, i use sqlite3 to work with database of account and orders, foods. I create table to save data in the head of file. 
-Database.db to save data of acount, user, food.
-In layout.html i create a layout an use templete like index, login, logout... to display request of user.
-Helpers.py is to create function like login_require to force user must login first to order.\
+Description:
+This is my final project for CS50x, where I developed a food ordering website. The main features of the site include:
 
-Hope you like my website and if any bug or prolem of my website, please comment to help me fix this.
+User Registration: Users can create accounts to access the system.
+Login and Logout: Users can log in and out securely.
+Food Ordering: Once logged in, users can browse food categories, select items, specify quantities, and place orders.
+Order Management: Users can view and manage their orders.
+Password Change: Users have the ability to change their passwords.
+I implemented the project using:
+
+Frontend: HTML, CSS, and JavaScript.
+Backend: Python and Flask to handle the core functionality.
+Database: SQLite3 to store data for users, orders, and food items.
+Key Components:
+app.py: This is the main file where I used Flask to build the backend logic. It handles routes for user authentication (login, logout, registration, password change) and order management. I used SQLite3 to manage the database of user accounts, orders, and food items.
+
+Database.db: This SQLite database stores all relevant data, including user information, food categories, and orders.
+
+layout.html: This template sets up the basic layout for the site. Other pages (e.g., index, login, and logout) extend this layout to ensure a consistent structure.
+
+helpers.py: This file contains utility functions, such as login_required, which ensures that users must log in before accessing certain features (like placing orders).
+
+Feedback:
+I hope you enjoy exploring the website! If you find any bugs or issues, feel free to leave a comment so I can address them.
